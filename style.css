@@ -8,7 +8,7 @@
     display: flex;
     justify-content: space-between;
     /* padding: 0rem 1rem; */
-    background-color: rgb(255, 222, 227);
+    background-color: rgb(255, 239, 241);
 
 }
 
@@ -59,10 +59,14 @@
     padding: 15px;
     font-family:Arial, Helvetica, sans-serif;
     margin: 1rem;
-    background-color: rgb(194, 140, 194);
-    border: 1px solid beige;
+    /* background-color: rgb(194, 140, 194); */
+   
     border-radius: 10px;
     cursor: pointer;
+    text-decoration: none;
+}
+.restcard:hover{
+    border: 1px solid beige;
 }
 .restcard>img{
     height: 200px;
@@ -90,7 +94,18 @@
     background-color: rgb(236, 236, 236);
     background-image: linear-gradient(to right, rgb(193, 190, 190) , rgb(200, 198, 198));
     margin: 1rem;
-   
     border-radius: 10px;
 
+}
+
+.input{
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    margin-left: 2rem;
+}
+
+.link{
+    text-decoration: none;
+    color: black;
 }
