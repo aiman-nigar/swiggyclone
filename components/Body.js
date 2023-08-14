@@ -1,9 +1,9 @@
 import { RestCard } from "./RestCard";
 import '../style.css';
-import resjsono from "../utils/mockdata";
 import { useEffect, useState } from "react";
 import Shimer from "./Shimer";
 import { Link } from "react-router-dom";
+import useStatus from "../utils/customHooks/useStatus";
 
 
 export const Body = () => {
@@ -37,6 +37,16 @@ export const Body = () => {
         setfilteredresturant(newjsondata.data.cards[2].card.card.gridElements.infoWithStyle.restaurants);
 
     }
+
+
+    //online - offline status
+
+    const onlineStatus = useStatus();
+
+    if(onlineStatus === false){
+      return <h1> Ooops!! Looks like your Internet is down. Please check and come back. </h1>
+    } 
+
 
     //conditional rendering
     //rendring on the basis of condition
@@ -84,6 +94,7 @@ export const Body = () => {
               
         </div>
         <div className="cardcontainer"  >
+
        
             {/* <RestCard resdata = {resjson[6]} /> */}
             {filteredresturant.map((resturant) => (
