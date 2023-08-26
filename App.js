@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Suspense, lazy } from "react";
 import * as ReactDOM from 'react-dom/client';
 import './style.css';
 import Navbar from "./components/Navbar";
@@ -8,6 +8,10 @@ import { Contact } from "./components/Contact";
 import { Errorelement } from "./components/Errorelement";
 import { createBrowserRouter, RouterProvider, Outlet } from "react-router-dom";
 import { Resturant } from "./components/Resturant";
+// import Grocery from "./components/Grocery";
+
+// For importing grocery component, we use lazy loading nd use imppppppport function
+const Grocery = lazy(() => import("./components/Grocery"));  //it'll create separate bundle for this component
 
 const App = () => {
     return(
@@ -35,6 +39,10 @@ const appRouter = createBrowserRouter([
         {
             path: "/Contact",
             element: <Contact/>,
+        },
+        {
+            path: "/grocery",
+            element: <Suspense fallback={ <h1> Loading..... </h1> } > <Grocery/> </Suspense>,
         },
         {
             path: "/resturant/:resid",

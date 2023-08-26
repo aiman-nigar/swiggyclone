@@ -21,6 +21,7 @@ const onlinesatus = useStatus();
                     <li><Link to="/" >  Home </Link></li>
                     <li><Link to="./About"> About  </Link> </li>
                     <li><Link to="./contact">Contact</Link></li>
+                    <li><Link to="./grocery">Grocery</Link></li>
                 </ul>
                 
             </div>
